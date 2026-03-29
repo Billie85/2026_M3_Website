@@ -1,53 +1,102 @@
 export type Song = {
   id: number
   title: string
-  artist: string
-  album: string
+  lyricist: string
+  composer: string
+  illustrator: string
   cover: string
-  duration: string
-  releaseYear: number
-  spotifyTrackId: string
+  audioUrl: string
 }
 
-const songTemplates = [
-  { title: "Midnight Dreams", artist: "Luna Echo", album: "Starlight Symphony" },
-  { title: "Electric Pulse", artist: "Neon Flux", album: "Digital Horizon" },
-  { title: "Ocean Waves", artist: "Coastal Breeze", album: "Seaside Memories" },
-  { title: "City Lights", artist: "Urban Soul", album: "Metropolitan Nights" },
-  { title: "Velvet Sky", artist: "Aurora Dawn", album: "Twilight Tales" },
-  { title: "Thunder Road", artist: "Steel Thunder", album: "Highway Chronicles" },
-  { title: "Crystal Rain", artist: "Prism Light", album: "Reflection" },
-  { title: "Golden Hour", artist: "Sunset Collective", album: "Amber Skies" },
-  { title: "Neon Paradise", artist: "Cyber Pulse", album: "Future Nostalgia" },
-  { title: "Silent Echo", artist: "Whisper Wind", album: "Quiet Moments" },
-  { title: "Starfall", artist: "Cosmic Drift", album: "Infinite Space" },
-  { title: "Desert Wind", artist: "Sand Storm", album: "Oasis Dreams" },
-  { title: "Firefly Dance", artist: "Night Garden", album: "Summer Nights" },
-  { title: "Frozen Lake", artist: "Winter Frost", album: "Ice Kingdom" },
-  { title: "Rainbow Bridge", artist: "Spectrum", album: "Color Theory" },
-  { title: "Shadow Play", artist: "Dark Matter", album: "Eclipse" },
-  { title: "Sunrise Melody", artist: "Morning Dew", album: "New Day" },
-  { title: "Lunar Phase", artist: "Moon Child", album: "Celestial" },
-  { title: "Wild Heart", artist: "Forest Echo", album: "Nature Calls" },
-  { title: "Digital Love", artist: "Pixel Dreams", album: "Retro Wave" },
+export const songs: Song[] = [
+  {
+    id: 1,
+    title: 'Horizon',
+    lyricist: 'Achan',
+    composer: 'なぎさ',
+    illustrator: 'きのっち',
+    cover: '/images/Achan＆なぎさ.png',
+    audioUrl: '/songs/Achan＆なぎさ - Horizon.mp3',
+  },
+  {
+    id: 2,
+    title: '',
+    lyricist: 'KiNoTch',
+    composer: '',
+    illustrator: 'KiNoTch',
+    cover: '/images/KiNoTch＆作曲.png',
+    audioUrl: '',
+  },
+  {
+    id: 3,
+    title: 'MERROR',
+    lyricist: 'CAD',
+    composer: 'Yus',
+    illustrator: 'Yus',
+    cover: '/images/Yus＆CAD.png',
+    audioUrl: '/songs/CAD＆Yus - MERROR.mp3',
+  },
+  {
+    id: 4,
+    title: '',
+    lyricist: 'Zero',
+    composer: 'くろどる',
+    illustrator: '',
+    cover: '/images/zero＆くろどる1.png',
+    audioUrl: '',
+  },
+  {
+    id: 5,
+    title: '本気可愛テクニック！(大嘘)',
+    lyricist: 'ぜん',
+    composer: 'うる',
+    illustrator: 'うる',
+    cover: '/images/ぜん＆うる.png',
+    audioUrl: '/songs/ぜん＆うる - 本気可愛テクニック！(大嘘).mp3',
+  },
+  {
+    id: 6,
+    title: 'Muse Day',
+    lyricist: 'Km33',
+    composer: 'Takuto',
+    illustrator: '',
+    cover: '/images/たくと＆Km33.PNG',
+    audioUrl: '/songs/Km33＆takuto - muse day.mp3',
+  },
+  {
+    id: 7,
+    title: '愛你キャンバス',
+    lyricist: 'ばにたぬ',
+    composer: 'やる子',
+    illustrator: 'やる子',
+    cover: '/images/やる子＆ばに.png',
+    audioUrl: '/songs/ばにたぬ＆やる子 - 愛你キャンバス.mp3',
+  },
+  {
+    id: 8,
+    title: 'Avяlon',
+    lyricist: '亀選任',
+    composer: 'トーコ',
+    illustrator: 'トーコ',
+    cover: '/images/亀＆トーコ.png',
+    audioUrl: '/songs/亀選任＆トーコ - Avяlon.mp3',
+  },
+  {
+    id: 9,
+    title: 'でてむ学園 〜開かずの間と大いなるカブ〜',
+    lyricist: '全体曲',
+    composer: '',
+    illustrator: '',
+    cover: '',
+    audioUrl: '/songs/作曲者全体曲 - でてむ学園 〜開かずの間と大いなるカブ〜.mp3',
+  },
+  {
+    id: 10,
+    title: '七色パレット',
+    lyricist: '全体曲',
+    composer: '',
+    illustrator: '',
+    cover: '',
+    audioUrl: '/songs/歌い手全体曲 - 七色パレット.mp3',
+  },
 ]
-
-const durations = ["3:24", "4:12", "3:45", "5:01", "3:58", "4:33", "3:15", "4:48", "3:36", "4:22"]
-const years = [2022, 2023, 2024]
-
-export const songs: Song[] = Array.from({ length: 100 }, (_, i) => {
-  const template = songTemplates[i % songTemplates.length]
-  const suffix = i >= 20 ? ` ${Math.floor(i / 20) + 1}` : ""
-
-  return {
-    id: i + 1,
-    title: `${template.title}${suffix}`,
-    artist: template.artist,
-    album: template.album,
-    cover: `https://picsum.photos/seed/song${i + 1}/400/400`,
-    duration: durations[i % durations.length],
-    releaseYear: years[i % years.length],
-    // サンプル用：実際のSpotifyトラックIDに置き換えてください
-    spotifyTrackId: "4iV5W9uYEdYUVa79Axb7Rh"  // サンプル: "Hotline Bling" by Drake
-  }
-})

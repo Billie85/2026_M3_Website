@@ -1,5 +1,8 @@
 import type { Viewport } from 'next'
+import { Yomogi } from 'next/font/google'
 import './globals.css'
+
+const yomogi = Yomogi({ weight: '400', subsets: ['latin'] })
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -14,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="bg-black text-white antialiased">
+      <body className={`${yomogi.className} bg-white text-zinc-700 antialiased`}>
         {children}
       </body>
     </html>
