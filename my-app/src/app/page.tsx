@@ -39,7 +39,7 @@ export default function MusicPage() {
       {/* ヘッダー */}
       <div className="px-6 pt-10 pb-5 text-left relative">
         {/* 背景の装飾円 */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl -z-10 pointer-events-none" style={{ background: 'rgba(125,171,40,0.12)' }} />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl -z-10 pointer-events-none" style={{ background: 'rgba(72,137,227,0.12)' }} />
 
         {/* アーティスト画像 */}
         <div className="relative w-80 h-80 mb-4 animate-fade-in delay-100 mx-auto">
@@ -89,17 +89,17 @@ export default function MusicPage() {
       </div>
 
         {/* 区切り線 */}
-        <div className="mt-5 h-px bg-gradient-to-r from-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(90deg, transparent, #7dab28, transparent)' }} />
+        <div className="mt-5 h-px bg-gradient-to-r from-transparent to-transparent" style={{ backgroundImage: 'linear-gradient(90deg, transparent, #4889e3, transparent)' }} />
       </div>
 
       {/* 曲数 */}
-      <div className="px-5 py-1.5 text-xs font-medium tracking-widest uppercase" style={{ color: '#7dab28' }}>
+      <div className="px-5 py-1.5 text-xs font-medium tracking-widest uppercase" style={{ color: '#4889e3' }}>
         {songs.length} tracks
       </div>
 
       {/* 曲リスト */}
       <div className="px-4 pb-10">
-        <div className="rounded-2xl p-3" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(125,171,40,0.25)' }}>
+        <div className="rounded-2xl p-3" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(72,137,227,0.25)' }}>
         <div className="flex flex-col gap-3">
           {songs.map((song, index) => (
             <div
@@ -119,7 +119,7 @@ export default function MusicPage() {
       </div>
 
       {/* 下部グロー */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-72 h-32 pointer-events-none -z-10" style={{ background: 'radial-gradient(ellipse, rgba(125,171,40,0.18) 0%, transparent 70%)' }} />
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-72 h-32 pointer-events-none -z-10" style={{ background: 'radial-gradient(ellipse, rgba(72,137,227,0.18) 0%, transparent 70%)' }} />
 
       <SongModal
         song={selectedSong}
