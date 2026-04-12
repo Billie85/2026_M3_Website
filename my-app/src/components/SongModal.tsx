@@ -129,11 +129,11 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
       {/* モーダル本体 */}
       <div
         className="relative z-10 flex flex-col overflow-hidden"
-        style={{ width: 'min(92vw, 380px)', height: 'min(95vh, 780px)' }}
+        style={{ width: 'min(92vw, 380px)' }}
         onClick={e => e.stopPropagation()}
       >
         {/* 画像エリア */}
-        <div className="relative flex-1 min-h-0">
+        <div className="relative w-full" style={{ aspectRatio: '3 / 4' }}>
           <Image
             src={song.cover}
             alt={song.title}
