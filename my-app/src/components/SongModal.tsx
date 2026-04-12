@@ -76,11 +76,21 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
     }
   }, [song, onNext])
 
-  // モーダルが開いている間は背景スクロールを無効化
+  // モーダルが開いている間は背景スクロールを無効化（iOS Safari対応）
   useEffect(() => {
     if (!song) return
+    const scrollY = window.scrollY
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      window.scrollTo(0, scrollY)
+    }
   }, [song])
 
   // Escキーで閉じる
