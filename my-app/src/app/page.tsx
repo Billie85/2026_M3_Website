@@ -34,7 +34,7 @@ export default function MusicPage() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col page-enter" style={{ background: '#000c' }}>
+    <div className="min-h-screen flex flex-col page-enter" style={{ background: 'rgb(17 17 20 / 95%)' }}>
 
       {/* ヘッダー */}
       <div className="px-6 pt-10 pb-5 text-left relative">
@@ -42,8 +42,8 @@ export default function MusicPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl -z-10 pointer-events-none" style={{ background: 'rgba(125,171,40,0.12)' }} />
 
         {/* アーティスト画像 */}
-        <div className="relative w-72 h-72 mb-4 animate-fade-in delay-100 mx-auto" style={{ boxShadow: '0 0 0 2px rgba(125,171,40,0.35), 0 8px 32px rgba(125,171,40,0.15)', borderRadius: '1rem' }}>
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
+        <div className="relative w-72 h-72 mb-4 animate-fade-in delay-100 mx-auto">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/images/top_img.png"
               alt="でてむはん"

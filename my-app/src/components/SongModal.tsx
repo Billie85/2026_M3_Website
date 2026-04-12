@@ -101,6 +101,13 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
     }
   }, [song, onNext])
 
+  // モーダルが開いている間は背景スクロールを無効化
+  useEffect(() => {
+    if (!song) return
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [song])
+
   // Escキーで閉じる
   useEffect(() => {
     if (!song) return
@@ -156,7 +163,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
           alt={`${song.title}`}
           fill
           sizes="384px"
-          className="object-contain object-top"
+          className={`object-contain ${song.id === 9 ? 'object-[center_30%]' : 'object-top'}`}
           priority
         />
 
@@ -170,7 +177,15 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
         </button>
 
         {/* 下部オーバーレイ：曲情報＋コントロール */}
-        <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 pt-24" style={{ background: 'linear-gradient(to top, #000c 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.3) 70%, transparent 100%)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', maskImage: 'linear-gradient(to top, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to top, black 60%, transparent 100%)' }}>
+        <div className="absolute inset-x-0 bottom-0 z-10">
+          {/* ブラーレイヤー：親にmask-imageを持たせ子にbackdrop-filterを置くことでiOS Safariのバグを回避しつつ境目をフェード */}
+          <div className="absolute inset-0" style={{ maskImage: 'linear-gradient(to top, black 50%, transparent 75%)', WebkitMaskImage: 'linear-gradient(to top, black 50%, transparent 75%)' }}>
+            <div className="absolute inset-0" style={{ backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }} />
+          </div>
+          {/* グラデーションオーバーレイ */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgb(23 23 25 / 97%) 0%, rgb(122 122 125 / 97%) 50%, transparent 75%)' }} />
+          {/* コンテンツ */}
+          <div className="relative px-4 pb-10 pt-48">
 
           {/* 曲情報 */}
           <div className="mb-1">
@@ -231,7 +246,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
               }}
             />
           </div>
-          <div className="flex justify-between text-xs text-white/50 mb-4">
+          <div className="flex justify-between text-xs text-white/50">
             <span>{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
@@ -268,7 +283,8 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
               <SkipForward size={26} />
             </button>
           </div>
-        </div>
+          </div>{/* コンテンツ終わり */}
+        </div>{/* オーバーレイ終わり */}
       </div>
     </div>
   )
