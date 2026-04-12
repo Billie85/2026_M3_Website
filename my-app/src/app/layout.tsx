@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`${yomogi.className} bg-white text-zinc-700 antialiased`}>
+      <body className={`${yomogi.className} bg-white text-zinc-700`}>
         {children}
       </body>
     </html>

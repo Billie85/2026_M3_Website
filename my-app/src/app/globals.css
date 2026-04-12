@@ -23,7 +23,6 @@
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
 
 /* ページ全体フェードイン */
 .page-enter {
@@ -42,7 +41,7 @@
 }
 .song-card:hover {
   transform: translateX(4px) translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.08);
 }
 
 /* SNS アイコン */

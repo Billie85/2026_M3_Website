@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import Image from 'next/image'
 import { X, Play, Pause, SkipForward, SkipBack } from 'lucide-react'
 import type { Song } from '@/data/songs'
+import { members } from '@/data/members'
 
 type Props = {
   song: Song | null
@@ -19,11 +20,57 @@ function formatTime(sec: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
+function MemberIcons({ name }: { name: string }) {
+  if (!members[name]) return null
+  const m = members[name]
+  const ytUrl = m.youtube || ''
+  const xUrl = m.x || ''
+
+  const ytIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+  )
+  const xIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  )
+
+  return (
+    <span className="inline-flex items-center gap-0.5 ml-1.5">
+      {ytUrl ? (
+        <a href={ytUrl} target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center w-8 h-8 text-red-500 hover:text-red-400 transition-colors"
+          aria-label={`${name} YouTube`}>
+          {ytIcon}
+        </a>
+      ) : (
+        <span className="inline-flex items-center justify-center w-8 h-8 text-red-500/40">
+          {ytIcon}
+        </span>
+      )}
+      {xUrl ? (
+        <a href={xUrl} target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center w-8 h-8 text-white hover:text-white/70 transition-colors"
+          aria-label={`${name} X`}>
+          {xIcon}
+        </a>
+      ) : (
+        <span className="inline-flex items-center justify-center w-8 h-8 text-white/40">
+          {xIcon}
+        </span>
+      )}
+    </span>
+  )
+}
+
 export function SongModal({ song, onClose, onNext, onPrev }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  const [showCredits, setShowCredits] = useState(false)
   const wasPlayingRef = useRef(false)
 
   // 曲が変わったら新しいAudioを作成
@@ -50,6 +97,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
       setIsPlaying(false)
       setCurrentTime(0)
       setDuration(0)
+      setShowCredits(false)
     }
   }, [song, onNext])
 
@@ -100,7 +148,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
       />
 
       {/* モーダル本体 */}
-      <div className="relative z-10 w-screen h-screen overflow-hidden">
+      <div className="relative z-10 w-screen h-screen overflow-hidden" onClick={() => { if (showCredits) setShowCredits(false) }}>
 
         {/* アルバムアート（全体） */}
         <Image
@@ -122,15 +170,51 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
         </button>
 
         {/* 下部オーバーレイ：曲情報＋コントロール */}
-        <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 pt-8 bg-gradient-to-t from-black/80 via-black/80 to-transparent">
+        <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-4 pt-24" style={{ background: 'linear-gradient(to top, #000c 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.3) 70%, transparent 100%)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', maskImage: 'linear-gradient(to top, black 60%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to top, black 60%, transparent 100%)' }}>
 
           {/* 曲情報 */}
-          <h2 className="text-lg font-bold text-white mb-1 truncate">{song.title}</h2>
-          <div className="flex gap-5 text-sm mb-4">
-            <span><span className="text-white font-bold text-xs mr-1">作詞</span><span className="font-bold text-white">{song.lyricist}</span></span>
-            <span><span className="text-white font-bold text-xs mr-1">作曲</span><span className="font-bold text-white">{song.composer}</span></span>
-            <span><span className="text-white font-bold text-xs mr-1">絵師</span><span className="font-bold text-white">{song.illustrator}</span></span>
+          <div className="mb-1">
+            <h2 className="text-2xl font-black text-white leading-tight">{song.title}</h2>
           </div>
+          <button
+            onClick={() => setShowCredits(v => !v)}
+            className="flex items-center gap-1 text-white text-sm font-bold mb-2 hover:text-white/70 transition-colors"
+          >
+            <span>{showCredits ? '' : '詳細 ↓'}</span>
+          </button>
+
+          {showCredits && (
+            <div className="flex flex-col mb-4 animate-[fadeIn_0.2s_ease]">
+              {song.lyricist && (
+                <span className="flex items-center gap-2">
+                  <span className="text-xs w-10 shrink-0 font-medium" style={{ color: '#7dab28' }}>作詞</span>
+                  <span className="font-bold text-white text-sm">{song.lyricist}</span>
+                  {song.lyricist.split(/[\s　]+/).map(n => <MemberIcons key={n} name={n} />)}
+                </span>
+              )}
+              {song.composer && (
+                <span className="flex items-center gap-2">
+                  <span className="text-xs w-10 shrink-0 font-medium" style={{ color: '#7dab28' }}>作曲</span>
+                  <span className="font-bold text-white text-sm">{song.composer}</span>
+                  {song.composer.split(/[\s　]+/).map(n => <MemberIcons key={n} name={n} />)}
+                </span>
+              )}
+              {song.singers?.length > 0 && (
+                <span className="flex items-center gap-2">
+                  <span className="text-xs w-10 shrink-0 font-medium" style={{ color: '#7dab28' }}>歌い手</span>
+                  <span className="font-bold text-white text-sm">{song.singers.join(' ')}</span>
+                  {song.singers.map(n => <MemberIcons key={n} name={n} />)}
+                </span>
+              )}
+              {song.illustrator && (
+                <span className="flex items-center gap-2">
+                  <span className="text-xs w-10 shrink-0 font-medium" style={{ color: '#7dab28' }}>絵師</span>
+                  <span className="font-bold text-white text-sm">{song.illustrator}</span>
+                  {song.illustrator.split(/[\s　]+/).map(n => <MemberIcons key={n} name={n} />)}
+                </span>
+              )}
+            </div>
+          )}
 
           {/* プログレスバー */}
           <div className="mb-1">
@@ -143,7 +227,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
               onChange={handleSeek}
               className="w-full h-1 rounded-full appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #fff ${progress}%, rgba(255,255,255,0.3) ${progress}%)`,
+                background: `linear-gradient(to right, #7dab28 ${progress}%, rgba(255,255,255,0.2) ${progress}%)`,
               }}
             />
           </div>
@@ -156,14 +240,17 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
           <div className="flex items-center justify-center gap-8">
             <button
               onClick={onPrev}
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-white/60 transition-colors"
+              onMouseEnter={e => (e.currentTarget.style.color = '#7dab28')}
+              onMouseLeave={e => (e.currentTarget.style.color = '')}
               aria-label="前の曲"
             >
               <SkipBack size={26} />
             </button>
             <button
               onClick={togglePlay}
-              className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:scale-105 transition-transform"
+              className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-105 transition-transform"
+              style={{ background: '#7dab28' }}
               aria-label={isPlaying ? '停止' : '再生'}
             >
               {isPlaying
@@ -173,7 +260,9 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
             </button>
             <button
               onClick={onNext}
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-white/60 transition-colors"
+              onMouseEnter={e => (e.currentTarget.style.color = '#7dab28')}
+              onMouseLeave={e => (e.currentTarget.style.color = '')}
               aria-label="次の曲"
             >
               <SkipForward size={26} />
