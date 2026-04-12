@@ -42,13 +42,13 @@ export default function MusicPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl -z-10 pointer-events-none" style={{ background: 'rgba(125,171,40,0.12)' }} />
 
         {/* アーティスト画像 */}
-        <div className="relative w-72 h-72 mb-4 animate-fade-in delay-100 mx-auto">
+        <div className="relative w-80 h-80 mb-4 animate-fade-in delay-100 mx-auto">
           <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/images/top_img.png"
               alt="でてむはん"
               fill
-              sizes="288px"
+              sizes="384px"
               className="object-cover"
               priority
             />

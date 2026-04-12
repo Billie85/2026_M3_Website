@@ -163,7 +163,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
           alt={`${song.title}`}
           fill
           sizes="384px"
-          className={`object-contain ${song.id === 9 ? 'object-[center_30%]' : 'object-top'}`}
+          className={`object-contain ${song.id === 10 ? 'object-[center_30%]' : 'object-top'}`}
           priority
         />
 
