@@ -18,7 +18,7 @@ export const songs: Song[] = [
     illustrator: 'きのっち',
     singers: ['Achan', 'なぎさ'],
     cover: '/images/なぎさ_Achan_KiNoTch.png',
-    audioUrl: '/songs/Achan＆なぎさ - Horizon.mp3',
+    audioUrl: '/songs/horizon.mp3',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const songs: Song[] = [
     illustrator: 'KiNoTch',
     singers: [],
     cover: '/images/作曲組_KiNoTch_KiNoTch.png',
-    audioUrl: '/songs/作曲者全体曲 - でてむ学園 〜開かずの間と大いなるカブ〜.mp3',
+    audioUrl: '/songs/detemu-gakuen.mp3',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const songs: Song[] = [
     illustrator: 'やる子',
     singers: ['CAD', 'Yus'],
     cover: '/images/yus_CAD_やる子.png',
-    audioUrl: '/songs/CAD＆Yus - MERROR.mp3',
+    audioUrl: '/songs/merror.mp3',
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ export const songs: Song[] = [
     composer: 'くろどる',
     illustrator: 'やる子',
     singers: ['Zero', 'くろどる'],
-    cover: '/images/zero_くろどるさん_やる子.PNG',
+    cover: '/images/zero_kurodoru_yaruko.png',
     audioUrl: '',
   },
   {
@@ -58,7 +58,7 @@ export const songs: Song[] = [
     illustrator: 'KiNoTch',
     singers: ['ぜん', 'うる'],
     cover: '/images/ZEN_うる_KiNoTch._.png',
-    audioUrl: '/songs/ぜん＆うる - 本気可愛テクニック！(大嘘).mp3',
+    audioUrl: '/songs/honki-kawaii.mp3',
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ export const songs: Song[] = [
     illustrator: 'トーコ',
     singers: ['Km33', 'Takuto'],
     cover: '/images/Takuto_km33_to-ko.png',
-    audioUrl: '/songs/Km33＆takuto - muse day.mp3',
+    audioUrl: '/songs/muse-day.mp3',
   },
   {
     id: 7,
@@ -78,7 +78,7 @@ export const songs: Song[] = [
     illustrator: 'トーコ',
     singers: ['ばにたぬ', 'やる子'],
     cover: '/images/ばにたぬ_やる子_to-ko.png',
-    audioUrl: '/songs/ばにたぬ＆やる子 - 愛你キャンバス.mp3',
+    audioUrl: '/songs/aini-canvas.mp3',
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const songs: Song[] = [
     illustrator: 'トーコ',
     singers: ['亀選任', 'トーコ'],
     cover: '/images/亀選任_to-ko._to-ko..png',
-    audioUrl: '/songs/亀選任＆トーコ - Avяlon.mp3',
+    audioUrl: '/songs/avalon.mp3',
   },
   {
     id: 9,
@@ -98,6 +98,6 @@ export const songs: Song[] = [
     illustrator: '',
     singers: [],
     cover: '',
-    audioUrl: '/songs/歌い手全体曲 - 七色パレット.mp3',
+    audioUrl: '/songs/nanairo-palette.mp3',
   },
 ]
