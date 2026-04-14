@@ -15,9 +15,9 @@ export function SongCard({ song, index, onClick }: Props) {
     <button
       onClick={onClick}
       className="song-card group w-full flex items-center gap-3 rounded-xl p-3 text-left backdrop-blur-md transition-all duration-200"
-      style={{ background: 'rgba(255,255,255,0.09)', border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid rgba(72,137,227,0.35)' }}
+      style={{ border: '1px solid rgba(255,255,255,0.1)', borderLeft: '3px solid rgba(72,137,227,0.35)' }}
       onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.14)'; e.currentTarget.style.borderLeft = '3px solid #4889e3'; }}
-      onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderLeft = '3px solid rgba(72,137,227,0.35)'; }}
+      onMouseLeave={e => { e.currentTarget.style.background = ''; e.currentTarget.style.borderLeft = '3px solid rgba(72,137,227,0.35)'; }}
     >
       {/* 番号 / ホバーで再生アイコン */}
       <span className="w-6 shrink-0 relative">

@@ -134,34 +134,36 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
       onClick={onClose}
     >
 
-      {/* モーダル本体 */}
-      <div
-        className="relative z-10 flex flex-col overflow-hidden"
-        style={{ width: 'min(92vw, 380px)' }}
-        onClick={e => e.stopPropagation()}
-      >
-        {/* 画像エリア */}
-        <div className="relative w-full" style={{ aspectRatio: '3 / 4' }}>
-          <Image
-            src={song.cover}
-            alt={song.title}
-            fill
-            sizes="380px"
-            className="object-contain object-top"
-            priority
-          />
-          {/* 閉じるボタン */}
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-3 z-20 p-1.5 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
-            aria-label="閉じる"
-          >
-            <X size={18} />
-          </button>
-        </div>
+      {/* モーダル本体ラッパー */}
+      <div className="relative" onClick={e => e.stopPropagation()}>
+        {/* 閉じるボタン（カードの上） */}
+        <button
+          onClick={onClose}
+          className="absolute -top-9 right-4 z-50 p-1.5 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+          aria-label="閉じる"
+        >
+          <X size={18} />
+        </button>
+
+        {/* モーダル本体 */}
+        <div
+          className="relative z-10 flex flex-col overflow-hidden"
+          style={{ width: 'min(92vw, 380px)', height: '82svh' }}
+        >
+          {/* 画像エリア */}
+          <div className="relative w-full flex-1 min-h-0">
+            <Image
+              src={song.cover}
+              alt={song.title}
+              fill
+              sizes="380px"
+              className="object-contain object-top"
+              priority
+            />
+          </div>
 
         {/* 情報＋コントロールエリア */}
-        <div className="shrink-0 px-4 pt-3 pb-5 rounded-2xl" style={{ background: 'rgb(38 38 39 / 71%)' }}>
+        <div className="shrink-0 px-4 pt-3 pb-2 rounded-2xl">
           {/* 曲情報 */}
           <h2 className="text-xl font-black text-white leading-tight break-words mb-1">{song.title}</h2>
           {/* クレジット */}
@@ -194,7 +196,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
               }}
             />
           </div>
-          <div className="flex justify-between text-xs text-white/50 mb-2">
+          <div className="flex justify-between text-xs text-white/50">
             <span>{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
@@ -234,6 +236,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

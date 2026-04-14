@@ -12,7 +12,7 @@ export const songs: Song[] = [
   {
     id: 1,
     title: 'Assassin',
-    lyricist: 'Zero',
+    lyricist: 'Zer0',
     composer: 'くろどる',
     illustrator: 'えぬ。',
     cover: '/images/zero_kurodoru_yaruko.png',
@@ -30,7 +30,7 @@ export const songs: Song[] = [
   {
     id: 3,
     title: 'MERROR',
-    lyricist: 'CAD',
+    lyricist: 'DJ CAD',
     composer: 'Yus',
     illustrator: 'えぬ。',
     cover: '/images/yus_CAD_やる子.png',
@@ -38,8 +38,8 @@ export const songs: Song[] = [
   },
   {
     id: 4,
-    title: 'でてむ学園 〜開かずの間と大いなるカブ〜',
-    lyricist: 'KiNoTch.',
+    title: 'でてむ学園 ',
+    lyricist: '',
     composer: '作曲者全体曲',
     illustrator: 'KiNoTch.',
     cover: '/images/作曲組_KiNoTch_KiNoTch.png',

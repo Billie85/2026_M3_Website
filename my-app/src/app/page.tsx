@@ -97,7 +97,7 @@ export default function MusicPage() {
 
       {/* 曲リスト */}
       <div className="px-4 pb-10">
-        <div className="rounded-2xl p-3" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(72,137,227,0.25)' }}>
+        <div className="rounded-2xl p-3">
         <div className="flex flex-col gap-3">
           {songs.map((song, index) => (
             <div
