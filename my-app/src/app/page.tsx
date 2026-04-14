@@ -56,7 +56,7 @@ export default function MusicPage() {
         <p className="text-white/70 text-[10px] text-right w-80 mx-auto -mt-2 mb-2">ジャケット:to-ko.</p>
 
         {/* タイトル */}
-        <h1 className="text-2xl font-black text-white tracking-[0.2em] mb-2 animate-fade-in-up">
+        <h1 className="text-2xl font-black text-white tracking-[0.2em] mb-4 animate-fade-in-up">
           平行世界の私たち
         </h1>
 
