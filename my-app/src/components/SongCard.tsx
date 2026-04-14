@@ -45,9 +45,6 @@ export function SongCard({ song, index, onClick }: Props) {
         <h3 className="font-semibold text-white truncate text-sm group-hover:text-[#4889e3] transition-colors duration-200">
           {song.title}
         </h3>
-        <p className="text-white/50 text-xs truncate mt-0.5">
-          {song.lyricist}
-        </p>
       </div>
 
       {/* 右矢印 */}

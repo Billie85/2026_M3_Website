@@ -1,6 +1,10 @@
-import type { Viewport } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Yomogi } from 'next/font/google'
 import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'でてむはん 2026 M3',
+}
 
 const yomogi = Yomogi({ weight: '400', subsets: ['latin'] })
 

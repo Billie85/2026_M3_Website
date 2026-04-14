@@ -26,15 +26,13 @@ function NameWithX({ name }: { name: string }) {
   return (
     <span className="inline-flex items-center gap-0.5">
       <span>{name}</span>
-      {m?.x ? (
+      {m?.x && (
         <a href={m.x} target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-8 h-8 text-white/40 hover:text-white transition-colors"
           onClick={e => e.stopPropagation()}
           aria-label={`${name} X`}>
           <XIcon />
         </a>
-      ) : (
-        <span className="inline-flex items-center justify-center w-8 h-8 text-white/25"><XIcon /></span>
       )}
     </span>
   )
@@ -201,7 +199,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
             <span>{formatTime(duration)}</span>
           </div>
           {/* コントロール */}
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-8 relative">
             <button
               onClick={onPrev}
               className="text-white/60 transition-colors"
@@ -231,6 +229,9 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
             >
               <SkipForward size={26} />
             </button>
+            <div className="absolute right-0">
+              <Image src="/images/detemu_log.png" alt="でてむはん" width={37} height={37} className="object-contain opacity-60" />
+            </div>
           </div>
         </div>
       </div>

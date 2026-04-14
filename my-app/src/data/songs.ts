@@ -18,7 +18,7 @@ export const songs: Song[] = [
     illustrator: 'えぬ。',
     singers: ['Zero'],
     cover: '/images/zero_kurodoru_yaruko.png',
-    audioUrl: '/songs/zero_kurodoru.mp3',
+    audioUrl: '/songs/01.mp3',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const songs: Song[] = [
     illustrator: 'to-ko.',
     singers: ['えぬ。'],
     cover: '/images/banitanu_to-ko.png',
-    audioUrl: '/songs/aini-canvas.mp3',
+    audioUrl: '/songs/02.mp3',
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const songs: Song[] = [
     illustrator: 'えぬ。',
     singers: ['Yus'],
     cover: '/images/yus_CAD_やる子.png',
-    audioUrl: '/songs/merror.mp3',
+    audioUrl: '/songs/03.mp3',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const songs: Song[] = [
     illustrator: 'KiNoTch.',
     singers: [],
     cover: '/images/作曲組_KiNoTch_KiNoTch.png',
-    audioUrl: '/songs/detemu-gakuen.mp3',
+    audioUrl: '/songs/04.mp3',
   },
   {
     id: 5,
@@ -58,7 +58,8 @@ export const songs: Song[] = [
     illustrator: 'to-ko.',
     singers: ['to-ko.'],
     cover: '/images/亀選任_to-ko._to-ko..png',
-    audioUrl: '/songs/avalon.mp3',
+    audioUrl: '/songs/05.mp3',
+
   },
   {
     id: 6,
@@ -68,7 +69,8 @@ export const songs: Song[] = [
     illustrator: '',
     singers: [],
     cover: '/images/top_img.png',
-    audioUrl: ' /songs/kinotch_kuro.mp3',
+    audioUrl: '/songs/06.mp3',
+
   },
   {
     id: 7,
@@ -78,7 +80,8 @@ export const songs: Song[] = [
     illustrator: 'KiNoTch.',
     singers: ['なぎさ'],
     cover: '/images/nagisa_achan_kinotch.png',
-    audioUrl: '/songs/horizon.mp3',
+    audioUrl: '/songs/07.mp3',
+
   },
   {
     id: 8,
@@ -88,7 +91,7 @@ export const songs: Song[] = [
     illustrator: 'to-ko.',
     singers: ['takuto'],
     cover: '/images/Takuto_km33_to-ko.png',
-    audioUrl: '/songs/muse-day.mp3',
+    audioUrl: '/songs/08.mp3',
   },
   {
     id: 9,
@@ -97,8 +100,8 @@ export const songs: Song[] = [
     composer: 'うる',
     illustrator: 'KiNoTch.',
     singers: ['Zen'],
-    cover: '/images/ZEN_うる_KiNoTch._.png',
-    audioUrl: '/songs/honki-kawaii.mp3',
+    cover: '/images/uru_kino.png',
+    audioUrl: '/songs/09.mp3',
   },
   {
     id: 10,
@@ -108,6 +111,6 @@ export const songs: Song[] = [
     illustrator: '',
     singers: [],
     cover: '/images/top_img.png',
-    audioUrl: '/songs/nanairo-palette.mp3',
+    audioUrl: '/songs/`10.mp3',
   },
 ]

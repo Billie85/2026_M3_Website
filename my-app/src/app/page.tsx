@@ -57,13 +57,13 @@ export default function MusicPage() {
 
         {/* タイトル */}
         <h1 className="text-2xl font-black text-white tracking-[0.2em] mb-2 animate-fade-in-up">
-          並行世界
+          平行世界の私たち        
         </h1>
 
         {/* 説明文 */}
-        <p className="text-white/70 text-sm leading-relaxed max-w-xs animate-fade-in-up delay-200">
+        <p className="text-white/70 text-sm leading-relaxed max-w-sm animate-fade-in-up delay-200">
         ◆でてむはんとは？<br></br>
-        音楽からイラスト,3Dまで、多岐にわたるジャンルのクリエイターが集まったコミュニティ。
+        音楽を中心にイラスト、3Dまで、多岐にわたるジャンルのクリエイターが集まったコミュニティ。
         Discordを起点に交流し、様々な情報交換や企画、ジャンルの垣根を超えたコラボレーション等、日々新しいクリエイションが生まれている。
         コンセプトは、”無限大の可能性を育てる”
         「まだ始めたてだけど夢がある」そんな方に成長の場を提供しています。
