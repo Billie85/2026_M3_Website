@@ -42,27 +42,25 @@ export default function MusicPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full blur-3xl -z-10 pointer-events-none" style={{ background: 'rgba(72,137,227,0.12)' }} />
 
         {/* アーティスト画像 */}
-        <div className="relative w-80 h-80 mb-4 animate-fade-in delay-100 mx-auto">
-          <div className="absolute inset-0 overflow-hidden">
-            <Image
-              src="/images/top_img.png"
-              alt="でてむはん"
-              fill
-              sizes="384px"
-              className="object-cover"
-              priority
-            />
-          </div>
+        <div className="relative w-80 h-80 mb-4 animate-fade-in delay-100 mx-auto overflow-hidden">
+          <Image
+            src="/images/top_img.png"
+            alt="でてむはん"
+            fill
+            sizes="320px"
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* タイトル */}
         <h1 className="text-2xl font-black text-white tracking-[0.2em] mb-2 animate-fade-in-up">
-          平行世界の私たち        
+          平行世界の私たち
         </h1>
 
         {/* 説明文 */}
         <p className="text-white/70 text-sm leading-relaxed max-w-sm animate-fade-in-up delay-200">
-        ◆でてむはんとは？<br></br>
+        ◆でてむはんとは？<br />
         音楽を中心にイラスト、3Dまで、多岐にわたるジャンルのクリエイターが集まったコミュニティ。
         Discordを起点に交流し、様々な情報交換や企画、ジャンルの垣根を超えたコラボレーション等、日々新しいクリエイションが生まれている。
         コンセプトは、”無限大の可能性を育てる”

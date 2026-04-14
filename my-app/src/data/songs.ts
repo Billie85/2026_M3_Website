@@ -4,7 +4,6 @@ export type Song = {
   lyricist: string
   composer: string
   illustrator: string
-  singers: string[]
   cover: string
   audioUrl: string
 }
@@ -16,7 +15,6 @@ export const songs: Song[] = [
     lyricist: 'Zero',
     composer: 'くろどる',
     illustrator: 'えぬ。',
-    singers: ['Zero'],
     cover: '/images/zero_kurodoru_yaruko.png',
     audioUrl: '/songs/01.mp3',
   },
@@ -26,7 +24,6 @@ export const songs: Song[] = [
     lyricist: 'ばに',
     composer: 'えぬ。',
     illustrator: 'to-ko.',
-    singers: ['えぬ。'],
     cover: '/images/banitanu_to-ko.png',
     audioUrl: '/songs/02.mp3',
   },
@@ -36,7 +33,6 @@ export const songs: Song[] = [
     lyricist: 'CAD',
     composer: 'Yus',
     illustrator: 'えぬ。',
-    singers: ['Yus'],
     cover: '/images/yus_CAD_やる子.png',
     audioUrl: '/songs/03.mp3',
   },
@@ -46,7 +42,6 @@ export const songs: Song[] = [
     lyricist: 'KiNoTch.',
     composer: '作曲者全体曲',
     illustrator: 'KiNoTch.',
-    singers: [],
     cover: '/images/作曲組_KiNoTch_KiNoTch.png',
     audioUrl: '/songs/04.mp3',
   },
@@ -56,10 +51,8 @@ export const songs: Song[] = [
     lyricist: '亀選任',
     composer: 'to-ko.',
     illustrator: 'to-ko.',
-    singers: ['to-ko.'],
     cover: '/images/亀選任_to-ko._to-ko..png',
     audioUrl: '/songs/05.mp3',
-
   },
   {
     id: 6,
@@ -67,10 +60,8 @@ export const songs: Song[] = [
     lyricist: 'KiNoTch.',
     composer: 'くろどる',
     illustrator: '',
-    singers: [],
     cover: '/images/top_img.png',
     audioUrl: '/songs/06.mp3',
-
   },
   {
     id: 7,
@@ -78,10 +69,8 @@ export const songs: Song[] = [
     lyricist: 'Achan',
     composer: 'なぎさ',
     illustrator: 'KiNoTch.',
-    singers: ['なぎさ'],
     cover: '/images/nagisa_achan_kinotch.png',
     audioUrl: '/songs/07.mp3',
-
   },
   {
     id: 8,
@@ -89,7 +78,6 @@ export const songs: Song[] = [
     lyricist: 'km33',
     composer: 'takuto',
     illustrator: 'to-ko.',
-    singers: ['takuto'],
     cover: '/images/Takuto_km33_to-ko.png',
     audioUrl: '/songs/08.mp3',
   },
@@ -99,7 +87,6 @@ export const songs: Song[] = [
     lyricist: 'Zen',
     composer: 'うる',
     illustrator: 'KiNoTch.',
-    singers: ['Zen'],
     cover: '/images/uru_kino.png',
     audioUrl: '/songs/09.mp3',
   },
@@ -109,8 +96,7 @@ export const songs: Song[] = [
     lyricist: '全体曲',
     composer: '',
     illustrator: '',
-    singers: [],
     cover: '/images/top_img.png',
-    audioUrl: '/songs/`10.mp3',
+    audioUrl: '/songs/10.mp3',
   },
 ]
