@@ -148,7 +148,7 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
         {/* モーダル本体 */}
         <div
           className="relative z-10 flex flex-col overflow-hidden"
-          style={{ width: 'min(92vw, 380px)', height: '82svh' }}
+          style={{ width: 'min(92vw, 380px)', height: '84svh' }}
         >
           {/* 画像エリア */}
           <div className="relative w-full flex-1 min-h-0">
