@@ -163,9 +163,9 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
           </div>
 
         {/* 情報＋コントロールエリア */}
-        <div className="shrink-0 px-4 pt-3 pb-2 rounded-2xl">
+        <div className="shrink-0 px-4 pt-3 pb-2 rounded-2xl mt-2">
           {/* 曲情報 */}
-          <h2 className="text-xl font-black text-white leading-tight break-words mb-1">{song.title}</h2>
+          <h2 className="text-lg font-black text-white leading-tight break-words mb-1">{song.title}</h2>
           {/* クレジット */}
           <div className="flex flex-wrap items-center gap-x-1.5 text-sm text-white">
             {song.lyricist && <NameWithX name={song.lyricist} />}
