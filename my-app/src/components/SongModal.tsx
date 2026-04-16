@@ -231,9 +231,9 @@ export function SongModal({ song, onClose, onNext, onPrev }: Props) {
             >
               <SkipForward size={26} />
             </button>
-            <div className="absolute right-0">
-              <Image src="/images/detemu_log.png" alt="でてむはん" width={37} height={37} className="object-contain opacity-60" />
-            </div>
+            <a href="https://x.com/Detemuhan" target="_blank" rel="noopener noreferrer" className="absolute right-0" onClick={e => e.stopPropagation()} aria-label="でてむはん X">
+              <Image src="/images/detemu_log.png" alt="でてむはん" width={37} height={37} className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
+            </a>
           </div>
         </div>
       </div>
